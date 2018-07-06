@@ -24,7 +24,7 @@
           </div>-->
         </div>
       </div>
-      <div class="navbar-item" style="margin-left: 170px">
+      <div class="navbar-item" style="margin-left: 500px">
         <span class="icon" @click="createAccount">
           <i class="fas fa-user-plus"></i>
         </span>
@@ -68,8 +68,8 @@
           sideBar.style.width = '250px'
           contents.style.marginLeft = '250px'
           if(this.$route.name === 'DashBoard'){
-            dashboard_one.style.maxWidth = '400px'
-            dashboard_two.style.maxWidth = '400px'
+            dashboard_one.style.maxWidth = '500px'
+            dashboard_two.style.maxWidth = '500px'
           }
         } else {
           this.isSideBar = false
@@ -112,7 +112,7 @@
     }
 
     .autocomplete {
-      width: 700px;
+      width: 1000px;
       height: 100%;
 
     }

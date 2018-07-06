@@ -56,7 +56,7 @@
     name: "DashBoard",
     data() {
       return {
-        totalAccount : null,
+        totalAccount : 0,
         totalBookmarks : [] ,
       }
     },
@@ -121,11 +121,10 @@
         font-size: 30px;
       }
       .first {
-        margin-right: 10px;
+       
       }
 
       .second {
-        margin-left: 10px;
       }
 
       .item {

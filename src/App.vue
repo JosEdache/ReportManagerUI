@@ -3,7 +3,7 @@
     <app-nav-bar/>
     <app-side-bar/>
     <app-content/>
-    <app-create-account @creatAccount/>
+    <app-create-account/>
   </div>
 </template>
 
