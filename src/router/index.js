@@ -5,6 +5,7 @@ import Bookmarks from '@/components/Bookmarks'
 import PaymentLogs from '@/components/PaymentLogs'
 import Accounts from '@/components/Accounts'
 import Payment from '@/components/Payment'
+import Receipt from '@/components/Receipt'
 
 Vue.use(Router)
 
@@ -24,6 +25,9 @@ export default new Router({
     },
     {
       name : 'Payment' , component : Payment , path : '/payment'
+    },
+    {
+      name : 'Receipt' , component : Receipt , path : '/receipt'
     }
   ]
 })

@@ -1,0 +1,41 @@
+#receipt {
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  margin: auto;
+  padding: 5px;
+  border: 1px solid gray;
+  width: 600px;
+  min-width: 400px;
+  //line-height: 1.5;
+  background-color: rgba(248, 248, 248, 0.51);
+}
+
+.container {
+  padding: 30px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  //line-height: 0.5;
+}
+
+.item > div{
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //text-align: justify;
+}
+
+.text-line {
+  text-decoration-line: overline underline;
+}
+
+.font-size {
+  font-size: 0.8rem
+}

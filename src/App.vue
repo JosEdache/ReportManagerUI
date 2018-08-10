@@ -30,7 +30,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" src="./sass/app.scss">
 
   #app {
     position: relative;

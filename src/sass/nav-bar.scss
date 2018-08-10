@@ -1,0 +1,38 @@
+@import "~bulma/sass/utilities/all";
+
+$navbar-background-color: #2a56c6;
+$navbar-height: 4rem;
+
+@import "~bulma/sass/components/navbar";
+/*
+@import "~bulma/sass/elements/form";
+@import "~bulma/sass/elements/icon";
+@import "~bulma/sass/elements/button";
+*/
+
+.navbar {
+  box-shadow: 1px 2px 1px gray;
+
+  .icon {
+    cursor: pointer;
+    color: white;
+  }
+
+  .autocomplete {
+    width: 1000px;
+    height: 100%;
+
+  }
+
+  img {
+    height: 20px;
+    width: 30px;
+  }
+
+  .button {
+    background-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.16);
+    color: white;
+  }
+
+}
