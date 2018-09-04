@@ -158,7 +158,10 @@
 
             i {
               color: white;
-              font-size: 50px
+              font-size: 50px;
+            }
+            h2 {
+              padding-top: 20px;
             }
           }
         }
