@@ -280,7 +280,9 @@ export default {
       let rpm = this;
       axios.get("http://localhost:8080/accounts/account-types").then(result => {
         for (let value of result.data) {
-          rpm.accountType.push(value.description);
+          if (value.description !== null) {
+            rpm.accountType.push(value.description);
+          }
         }
       });
     },

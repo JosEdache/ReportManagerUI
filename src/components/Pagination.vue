@@ -1,6 +1,6 @@
 <template>
   <div id="pagination">
-    <nav class="pagination is-centered is-rounded is-small">
+    <nav class="pagination is-centered is-rounded">
       <a class="pagination-previous next-previous" @click="gotoPage(current-1)" ref="previous" disabled> Previous </a>
       <a class="pagination-next" @click="gotoPage(current+1)" ref="next"> Next </a>
       <ul class="pagination-list">

@@ -23,7 +23,7 @@
                 <label class="label">Account Type</label>
                 <div class="control">
                   <div class="select">
-                    <select v-model="accountDetails.description">
+                    <select v-model="accountDetails.accountType">
                       <option v-for="type in accountType">{{type}}</option>
                     </select>
                   </div>
@@ -82,14 +82,15 @@
         })
       },
       saveAccount() {
-        axios.post("http://localhost:8080/accounts/update", {
-          "id": this.accountDetails.id,
+        console.log(this.accountDetails)
+        axios.post('http://localhost:8080/accounts/'+this.accountDetails.accountType+'/create', {
+          // "id": this.accountDetails.id,
           "code": this.accountDetails.code,
           "bookmarks": false,
           "description": this.accountDetails.description,
-          "accountType": this.accountDetails.accountType
+          // "accountType": this.accountDetails.accountType
         }).then(response => {
-          if (response.data === "Account updated successful");
+          if (response.data === "Account creation success") this.isView = false;
         })
       },
     },
