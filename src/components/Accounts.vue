@@ -231,7 +231,7 @@ export default {
     },
     view(e) {
       this.isView = true;
-      const account = this.accounts[e];
+      const account = this.accounts[this.pageStart + e];
       this.accountDetails = {
         ...account,
         index: e
@@ -287,9 +287,8 @@ export default {
       });
     },
     changeBookmark(e) {
-      //this.accounts[e - 1].bookmarks = !this.accounts[e - 1].bookmarks
-      //console.log(JSON.stringify(this.accounts[e - 1]))
-      const account = this.accounts[e];
+      const account = this.accounts[this.pageStart + e];
+      console.log(account.id)
       Http
         .put("accounts/update", {
           id: account.id,
@@ -300,13 +299,13 @@ export default {
         })
         .then(response => {
           if (response.data === "Account updated successful")
-            this.accounts[e].bookmarks = !this.accounts[e].bookmarks;
+            this.accounts[this.pageStart + e].bookmarks = !this.accounts[this.pageStart + e].bookmarks;
         });
       this.accountDetails.bookmarks = !this.accountDetails.bookmarks;
     },
     editAccount(e) {
       this.isEdit = true;
-      const account = this.accounts[e];
+      const account = this.accounts[this.pageStart + e];
       this.accountDetails = {
         ...account
       };
