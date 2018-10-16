@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import Http from "../utils/http";
 import Pagination from "./Pagination";
 
 export default {
@@ -135,7 +135,7 @@ export default {
   },
   mounted: function() {
     let rpm = this;
-    axios.get("http://localhost:8080/accounts/payment-logs").then(result => {
+    Http.get("accounts/payment-logs").then(result => {
       for (let value of result.data) {
         rpm.paymentLogs.push(value);
       }

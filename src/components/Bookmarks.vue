@@ -162,7 +162,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import Http from "../utils/http";
 import Pagaination from "./Pagination";
 import CheckedBar from "./CheckedBar";
 export default {
@@ -234,8 +234,8 @@ export default {
       });
     },
     saveChanges() {
-      axios
-        .put("http://localhost:8080/accounts/update", {
+      Http
+        .put("accounts/update", {
           id: this.accountDetails.id,
           code: this.accountDetails.code,
           bookmarks: this.accountDetails.bookmarks,
@@ -248,8 +248,8 @@ export default {
         });
     },
     deleteAccount(e) {
-      axios
-        .delete("http://localhost:8080/accounts/delete/" + e)
+      Http
+        .delete("accounts/delete/" + e)
         .then(response => {
           if (response.data === "Account deleted successful") {
             this.accounts.forEach((account, index) => {
@@ -262,7 +262,7 @@ export default {
     },
     getAllAccount() {
       let rpm = this;
-      axios.get("http://localhost:8080/accounts").then(result => {
+      Http.get("accounts").then(result => {
         for (let value of result.data) {
           if (value.bookmarks) rpm.accounts.push(value);
         }
@@ -274,7 +274,7 @@ export default {
     },
     getAllAccountType() {
       let rpm = this;
-      axios.get("http://localhost:8080/accounts/account-types").then(result => {
+      Http.get("accounts/account-types").then(result => {
         for (let value of result.data) {
           rpm.accountType.push(value.description);
         }
@@ -282,8 +282,8 @@ export default {
     },
     changeBookmark(e) {
       const account = this.accounts[e];
-      axios
-        .put("http://localhost:8080/accounts/update", {
+      Http
+        .put("accounts/update", {
           id: account.id,
           code: account.code,
           bookmarks: !account.bookmarks,

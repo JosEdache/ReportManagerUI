@@ -86,7 +86,7 @@
 </template>
 
 <script>
-  import axios from "axios";
+  import Http from "../utils/http";
   export default {
     name: "Receipt",
     components: {},
@@ -104,7 +104,7 @@
       }
     },
     mounted() {
-      axios.get("http://localhost:8080/get-transaction").then(({ data }) => {
+      Http.get("get-transaction").then(({ data }) => {
         data.forEach(item => {
           this.transaction.push(item);
         });

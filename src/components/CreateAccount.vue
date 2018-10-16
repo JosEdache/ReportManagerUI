@@ -56,7 +56,7 @@
 </template>
 
 <script>
-  import axios from "axios";
+  import Http from "../utils/http";
   import {eventBus} from "../main";
 
   export default {
@@ -75,7 +75,7 @@
     methods: {
       getAllAccountType() {
         let rpm = this;
-        axios.get("http://localhost:8080/accounts/account-types").then(result => {
+        Http.get("accounts/account-types").then(result => {
           for (let value of result.data) {
             rpm.accountType.push(value.description)
           }
@@ -83,7 +83,7 @@
       },
       saveAccount() {
         console.log(this.accountDetails)
-        axios.post('http://localhost:8080/accounts/'+this.accountDetails.accountType+'/create', {
+        Http.post('accounts/'+this.accountDetails.accountType+'/create', {
           // "id": this.accountDetails.id,
           "code": this.accountDetails.code,
           "bookmarks": false,

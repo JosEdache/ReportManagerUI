@@ -97,7 +97,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import Http from '../utils/http'
   // todo add google chart for date log in payment logs component
   export default {
     name: "DashBoard",
@@ -121,7 +121,7 @@
     },
     mounted() {
       this.checkContent()
-      axios.get("http://localhost:8080/accounts").then(result => {
+      Http.get("accounts").then(result => {
         this.totalAccount = result.data.length;
         for (let value of result.data) {
           if (value.bookmarks) this.totalBookmarks.push(value)
