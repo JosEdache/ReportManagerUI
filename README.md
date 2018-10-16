@@ -1,6 +1,6 @@
 # reportmanager
 
-> app for managing report
+> app for managing report desktop responsiveness only
 
 ## Build Setup
 
